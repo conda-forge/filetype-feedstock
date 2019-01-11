@@ -1,6 +1,6 @@
 {% set name = "filetype" %}
-{% set version = "1.0.1" %}
-{% set sha256 = "97b4ec0974b07cbddb3e74cf323d8688749807014055cc91cdbfef5442a94dc5" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "31255843ec8b95eec26f7e08817bc42e4017659321a7d3c1818a7664f8a09aef" %}
 
 package:
   name: '{{ name|lower }}'
