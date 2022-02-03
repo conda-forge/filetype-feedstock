@@ -1,6 +1,6 @@
 {% set name = "filetype" %}
-{% set version = "1.0.7" %}
-{% set sha256 = "da393ece8d98b47edf2dd5a85a2c8733e44b769e32c71af4cd96ed8d38d96aa7" %}
+{% set version = "1.0.10" %}
+{% set sha256 = "323a13500731b6c65a253bc3930bbce9a56dfba71e90b60ffd968ab69d9ae937" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
   run:
