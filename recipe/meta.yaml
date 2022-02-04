@@ -26,9 +26,8 @@ requirements:
 
 test:
   imports:
-    - examples
     - filetype
-    - filetype.types
+
   commands:
     - filetype --help
     
