@@ -1,6 +1,6 @@
 {% set name = "filetype" %}
-{% set version = "1.0.10" %}
-{% set sha256 = "323a13500731b6c65a253bc3930bbce9a56dfba71e90b60ffd968ab69d9ae937" %}
+{% set version = "1.0.12" %}
+{% set sha256 = "7ffc103209608903ac432f214ce7d60235b1cbee2bd9a7ddd7a9cdce80567c20" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ build:
     - filetype=filetype.__main__:main
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ test:
 
   commands:
     - filetype --help
-    
+
 about:
   home: https://github.com/h2non/filetype.py
   license: MIT
