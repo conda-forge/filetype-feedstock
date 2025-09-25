@@ -1,21 +1,19 @@
 {% set name = "filetype" %}
 {% set version = "1.2.0" %}
-{% set sha256 = "66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb
 
 build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - filetype=filetype.__main__:main
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-build-isolation --no-deps -vv
-  skip: true  # [py<35]
 
 requirements:
   host:
@@ -27,10 +25,10 @@ requirements:
     - python
 
 test:
-  imports:
-    - filetype
   source_files:
     - tests
+  imports:
+    - filetype
   requires:
     - pytest
     - pip
@@ -49,7 +47,7 @@ about:
     Small and dependency free Python package to infer file type 
     and MIME type checking the magic numbers signature of a file or buffer.
     This is a Python port from filetype Go package.
-  doc_url: https://h2non.github.io/filetype.py/
+  doc_url: https://h2non.github.io/filetype.py
   dev_url: https://github.com/h2non/filetype.py
 
 extra:
